@@ -1,0 +1,48 @@
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(37, 0, 61);
+    color: white;
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+
+        &__brand{
+            color: #f3bc59;
+            margin-top: -8px;
+            font-size: 1.5rem;
+        }
+
+        &__menu {
+            display: flex;
+            width: 50%;
+            justify-content: space-around;
+            align-items: center;
+
+            & li{
+                list-style: none;
+            }
+
+            & a{
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 5%;
+
+                &:hover{
+                    background-color: #f3bc59;
+                    color: rgb(37, 0, 61);
+                    transition: ease-in .2s;     
+                }
+            }
+
+            .active{
+                color: #f3bc59;
+            }
+        
+        }
+    }
+    
+}
