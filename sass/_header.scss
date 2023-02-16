@@ -1,48 +1,23 @@
-.wrapper{
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(37, 0, 61);
-    color: white;
+.header{
+    background-color: white;
 
-    .navbar{
+    &__nav{
         display: flex;
-        justify-content: space-between;
-        padding: 20px;
+        justify-content: space-around;
+        align-items: center;
 
-        &__brand{
-            color: #f3bc59;
-            margin-top: -8px;
-            font-size: 1.5rem;
-        }
 
-        &__menu {
-            display: flex;
-            width: 50%;
-            justify-content: space-around;
-            align-items: center;
-
-            & li{
-                list-style: none;
+        .logo{
+            &__img{
+                width: 70px;
+                border: 2px solid black;
+                border-radius: 50%;
             }
-
-            & a{
-                color: white;
-                text-decoration: none;
-                padding: 10px 20px;
-                border-radius: 5%;
-
-                &:hover{
-                    background-color: #f3bc59;
-                    color: rgb(37, 0, 61);
-                    transition: ease-in .2s;     
-                }
-            }
-
-            .active{
-                color: #f3bc59;
-            }
-        
         }
     }
-    
+
+    .carrito{
+        width: 70px;
+        list-style: none;
+    }
 }

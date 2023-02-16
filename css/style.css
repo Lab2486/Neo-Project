@@ -4,96 +4,67 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Space Grotesk', sans-serif;
+.body {
+  background-color: lightgrey;
 }
 
-.wrapper {
-  width: 100vw;
-  height: 100vh;
-  background-color: #25003d;
-  color: white;
+.header {
+  background-color: white;
 }
 
-.wrapper .navbar {
+.header__nav {
   display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.wrapper .navbar__brand {
-  color: #f3bc59;
-  margin-top: -8px;
-  font-size: 1.5rem;
-}
-
-.wrapper .navbar__menu {
-  display: flex;
-  width: 50%;
   justify-content: space-around;
   align-items: center;
 }
 
-.wrapper .navbar__menu li {
+.header__nav .logo__img {
+  width: 70px;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+.header .carrito {
+  width: 70px;
   list-style: none;
 }
 
-.wrapper .navbar__menu a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5%;
+main .titulo {
+  font-family: 'Syncopate', sans-serif;
+  text-align: center;
+  padding-top: 30px;
 }
 
-.wrapper .navbar__menu a:hover {
-  background-color: #f3bc59;
-  color: #25003d;
-  transition: ease-in .2s;
+main .subtitulo {
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+  padding-top: 5px;
 }
 
-.wrapper .navbar__menu .active {
-  color: #f3bc59;
+main .ep {
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-.main {
-  margin: 0 auto;
-  width: 80vw;
-  height: 80vh;
-  display: flex;
-  align-items: center;
+main .ep__title {
+  color: palevioletred;
+  font-family: 'Syncopate', sans-serif;
 }
 
-.main .imagen {
-  width: 400px;
-  border: 5px solid #f3bc59;
-  border-radius: 50%;
-  transform: rotateZ(0deg);
-  transition: transform 1s;
+main .ep__subtitle {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
-.main .imagen:hover {
-  transform: rotateZ(360deg);
+main .ep__img {
+  width: 300px;
 }
 
-.main h1 {
-  font-size: 3rem;
+main .ep__artist {
+  color: palevioletred;
+  font-family: 'Syncopate', sans-serif;
 }
 
-.main h1 span {
-  color: #f3bc59;
-}
-
-.main .download__buttom {
-  padding: 10px 20px;
-  background-color: #f3bc59;
-  border-radius: 20px;
-  color: #25003d;
-  border: none;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.main .download__buttom:hover {
-  background-color: pink;
-  color: black;
+main .ep__columna {
+  background-color: #b5b5b5;
 }
