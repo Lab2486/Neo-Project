@@ -1,0 +1,28 @@
+@mixin titulo {
+    font-family: 'Vampiro One', cursive;
+    text-align: center;
+
+  }
+
+@mixin subtitulo{
+    font-family: 'Space Grotesk', sans-serif;
+    text-align: center;
+}  
+
+
+
+
+$fontsizes:(
+    "f1": 1rem,
+    "f1-5": 1.5rem,
+    "f2": 2rem,
+    "f3": 3rem,
+    "f4": 4rem,
+);
+
+
+@each $nombre, $font-size in $fontsizes{
+    .#{$nombre}{
+        font-size:#{$font-size};
+    }
+}

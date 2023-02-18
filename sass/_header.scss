@@ -20,4 +20,11 @@
         width: 70px;
         list-style: none;
     }
+
+    &__titulo{
+        @include titulo
+        
+    }
+
+   
 }

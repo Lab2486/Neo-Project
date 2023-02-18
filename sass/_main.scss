@@ -1,17 +1,5 @@
 main{
-    .titulo{
-        font-family: 'Syncopate', sans-serif;
-        text-align: center;
-        padding-top: 30px;
-        
-    }
-
-    .subtitulo{
-        font-family: 'Space Grotesk', sans-serif;
-        text-align: center;
-        padding-top: 5px;
-    }
-
+   
     .ep{
         text-align: center;
         padding-left: 40px;
@@ -28,22 +16,54 @@ main{
         }
 
         &__img{
-            width: 300px;
+            width: 250px;
+            border-radius: 29px;
         }
 
         &__artist{
-            color: palevioletred;
+            color: rgb(71, 7, 29);
             font-family: 'Syncopate', sans-serif;
         }
 
         &__columna{
             background-color: #b5b5b5;
+            border-radius: 30px;
         }
 
-        
+        &__audio{
+            width: 90%;
+            border-radius: 10px;
+        }
+
 
     }
 
   
+}
+
+.category__list{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #b5b5b5;
+
+
+
+    .category__item{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 10px 10px;
+        background-color: white;
+        text-decoration: none;
+        color: black;
+        border-radius: 5px;
+        width:120px;
+        @include subtitulo
+
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
 }
 
