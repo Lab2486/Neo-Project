@@ -6,12 +6,13 @@ main{
         padding-right: 40px;
 
         &__title{
-            color: palevioletred;
-            font-family: 'Syncopate', sans-serif;
+            color:rgb(130, 130, 130);
+            font-family: 'IBM Plex Mono', monospace;
+            padding-top: 5px;
         }
         
         &__subtitle{
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'IBM Plex Mono', monospace;
             
         }
 
@@ -23,6 +24,8 @@ main{
         &__artist{
             color: rgb(71, 7, 29);
             font-family: 'Syncopate', sans-serif;
+            padding-top: 5px;
+            margin: 0;
         }
 
         &__columna{

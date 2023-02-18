@@ -61,12 +61,13 @@ main .ep {
 }
 
 main .ep__title {
-  color: palevioletred;
-  font-family: 'Syncopate', sans-serif;
+  color: #828282;
+  font-family: 'IBM Plex Mono', monospace;
+  padding-top: 5px;
 }
 
 main .ep__subtitle {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 main .ep__img {
@@ -77,6 +78,8 @@ main .ep__img {
 main .ep__artist {
   color: #47071d;
   font-family: 'Syncopate', sans-serif;
+  padding-top: 5px;
+  margin: 0;
 }
 
 main .ep__columna {
