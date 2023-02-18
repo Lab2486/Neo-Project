@@ -1,5 +1,5 @@
 .header{
-    background-color: white;
+    background-color: black;
 
     &__nav{
         display: flex;
@@ -10,7 +10,7 @@
         .logo{
             &__img{
                 width: 70px;
-                border: 2px solid black;
+                border: 2px solid darkgray;
                 border-radius: 50%;
             }
         }
@@ -23,7 +23,10 @@
 
     &__titulo{
         @include titulo
-        
+    }
+
+    ul{
+        margin: 0;
     }
 
    

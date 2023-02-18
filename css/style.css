@@ -29,7 +29,7 @@
 }
 
 .header {
-  background-color: white;
+  background-color: black;
 }
 
 .header__nav {
@@ -40,7 +40,7 @@
 
 .header__nav .logo__img {
   width: 70px;
-  border: 2px solid black;
+  border: 2px solid darkgray;
   border-radius: 50%;
 }
 
@@ -52,6 +52,21 @@
 .header__titulo {
   font-family: 'Vampiro One', cursive;
   text-align: center;
+  color: white;
+}
+
+.header ul {
+  margin: 0;
+}
+
+.main__contenedor {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  background-color: #242424;
+  width: 80%;
 }
 
 main .ep {
@@ -61,13 +76,14 @@ main .ep {
 }
 
 main .ep__title {
-  color: #828282;
+  color: #cccccc;
   font-family: 'IBM Plex Mono', monospace;
   padding-top: 5px;
 }
 
 main .ep__subtitle {
   font-family: 'IBM Plex Mono', monospace;
+  color: white;
 }
 
 main .ep__img {
@@ -76,15 +92,16 @@ main .ep__img {
 }
 
 main .ep__artist {
-  color: #47071d;
+  color: white;
   font-family: 'Syncopate', sans-serif;
   padding-top: 5px;
   margin: 0;
 }
 
 main .ep__columna {
-  background-color: #b5b5b5;
+  background-color: #717171;
   border-radius: 30px;
+  margin-bottom: 30px;
 }
 
 main .ep__audio {
