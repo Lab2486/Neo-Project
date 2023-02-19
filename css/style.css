@@ -112,7 +112,7 @@ main .ep__audio {
 .category__list {
   display: flex;
   justify-content: space-evenly;
-  background-color: #b5b5b5;
+  background-color: #717171;
 }
 
 .category__list .category__item {
