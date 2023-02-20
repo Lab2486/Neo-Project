@@ -25,7 +25,11 @@
 }
 
 .body {
-  background-color: lightgrey;
+  background: white;
+  background: -moz-linear-gradient(90deg, white 0%, #242424 7%, #242424 93%, white 100%);
+  background: -webkit-linear-gradient(90deg, white 0%, #242424 7%, #242424 93%, white 100%);
+  background: linear-gradient(90deg, white 0%, #242424 7%, #242424 93%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
 }
 
 .header {
@@ -109,10 +113,14 @@ main .ep__audio {
   border-radius: 10px;
 }
 
+main .ep .boton {
+  margin-top: 10px;
+}
+
 .category__list {
   display: flex;
-  justify-content: space-evenly;
   background-color: #717171;
+  justify-content: space-evenly;
 }
 
 .category__list .category__item {
