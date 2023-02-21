@@ -136,8 +136,3 @@ main .ep .boton {
   font-family: 'Space Grotesk', sans-serif;
   text-align: center;
 }
-
-.category__list .category__item:hover {
-  background-color: black;
-  color: white;
-}

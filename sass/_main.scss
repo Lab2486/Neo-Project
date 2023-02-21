@@ -81,11 +81,6 @@ main{
         border-radius: 5px;
         width:120px;
         @include subtitulo
-
-        &:hover{
-            background-color: black;
-            color: white;
-        }
     }
 }
 
