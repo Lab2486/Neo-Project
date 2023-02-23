@@ -1,7 +1,11 @@
-/*let nombre = prompt("ingresa tu nombre");
-let apellido = prompt("ingresa tu apellido");
-let salida = nombre + " " +  apellido + " " + "welcome to this page";
-alert (salida);*/
+let nombre = prompt ("Ingresa tu nombre")
 
-saludo = "Bienvenido a Absent Void"
-alert(saludo)
+if (nombre == ""){
+    alert ("No ingresaste tu nombre")
+} else{
+    alert ("Bienvenido" + " " + nombre)
+}
+
+
+
+
