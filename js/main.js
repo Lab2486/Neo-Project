@@ -20,23 +20,23 @@
 
 
 
-const tracks = [agregarTracks];
-function agregarTracks (nombre, ep, artista, sello, precio){
-    tracks.push (new Track (nombre, ep, artista, sello, precio))
-}
-class Track {
-    constructor (nombre, ep, artista, sello, precio){
-        this.nombre = nombre;
-        this.ep = ep;
-        this.artista = artista;
-        this.sello = sello;
-        this.precio = parseFloat.precio;
-    }
-}
+// const tracks = [agregarTracks];
+// function agregarTracks (nombre, ep, artista, sello, precio){
+//     tracks.push (new Track (nombre, ep, artista, sello, precio))
+// }
+// class Track {
+//     constructor (nombre, ep, artista, sello, precio){
+//         this.nombre = nombre;
+//         this.ep = ep;
+//         this.artista = artista;
+//         this.sello = sello;
+//         this.precio = parseFloat.precio;
+//     }
+// }
 
-agregarTracks("Little More", "EPJOKER", "JOKR", "JOKERBLACKLABEL", "20");
+// agregarTracks("Little More", "EPJOKER", "JOKR", "JOKERBLACKLABEL", "20");
 
-console.log (tracks)
+// console.log (tracks)
 
 
 

@@ -6,7 +6,6 @@
 
 main{
 
-    background-color: rgb(36, 36, 36);
     width: 80%;
    
     .ep{
@@ -39,9 +38,11 @@ main{
         }
 
         &__columna{
-            background-color: #717171;
+            background-color: #646464;
             border-radius: 30px;
             margin-bottom: 30px;
+            box-shadow: 0px 0px 15px black;
+            border: 1px solid black;
         }
 
         &__audio{
@@ -65,7 +66,7 @@ main{
 
 .category__list{
     display: flex;
-    background-color: #717171;
+    background-color: #414141;
     justify-content: space-evenly;
 
 
