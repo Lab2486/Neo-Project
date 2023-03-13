@@ -47,13 +47,6 @@ const track10 = new Tracks ("Check This Out", "Making The Groove (EP)", "Anvii",
 const minimal = [track1, track2, track3, track4, track5]
 const house = [track6, track7, track8, track9, track10]
 
-// console.log (minimal)
-// console.log (house)
-
-
-// for (const track of minimal) {
-//     console.log(`${track.trackName} ${track.epName} ${track.artis} $ ${track.price}`)
-// }
 
 let filtro = prompt ("Ingresa: \n 1) Para Minimal \n 2) Para house")
 
