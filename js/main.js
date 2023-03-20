@@ -20,36 +20,33 @@
 
 
 
-class Tracks {
-    constructor (trackName, epName,artist, price, id, gender){
-        this.trackName = trackName;
-        this.epName = epName;
-        this.artist = artist;
-        this.price = price
-        this.id = id
-        this.gender = gender
-    }
-}
+// class Tracks {
+//     constructor (trackName, epName,artist, price, id, gender){
+//         this.trackName = trackName;
+//         this.epName = epName;
+//         this.artist = artist;
+//         this.price = price
+//         this.id = id
+//         this.gender = gender
+//     }
+// }
 
-const track1 = new Tracks ("Al Final Del Tunel", "Al final del tunel (EP)", "Kold", 20, "m01", "Minimal");
-const track2 = new Tracks ("Dark Sequense", "Al final del tunel (EP)", "Kold", 20, "m02", "Minimal");
-const track3 = new Tracks ("All Night Long", "Head Hunter (EP)", "Jokr", 20, "m03", "Minimal");
-const track4 = new Tracks ("Head Hunter", "Head Hunter (EP)", "Jokr", 20, "m04", "Minimal");
-const track5 = new Tracks ("Ninja", "Head Hunter (EP)", "Jokr", 20, "m05", "Minimal")
+// const track1 = new Tracks (nombre: "Al Final Del Tunel", "Al final del tunel (EP)", "Kold", 20, "m01", "Minimal");
+// const track2 = new Tracks (nombre: "Dark Sequense", "Al final del tunel (EP)", "Kold", 20, "m02", "Minimal");
+// const track3 = new Tracks (nombre: "All Night Long", "Head Hunter (EP)", "Jokr", 20, "m03", "Minimal");
+// const track4 = new Tracks (nombre: "Head Hunter", "Head Hunter (EP)", "Jokr", 20, "m04", "Minimal");
+// const track5 = new Tracks (nombre: "Ninja", "Head Hunter (EP)", "Jokr", 20, "m05", "Minimal")
 
-const track6 = new Tracks ("White Lights", "White Lights (EP)", "Fenoma", 20, "House")
-const track7 = new Tracks ("Feel It", "White Lights (EP)", "Fenoma", 20, "House")
-const track8 = new Tracks ("Making The Groove", "Making The Groove (EP)", "Anvii", 20, "House")
-const track9 = new Tracks ("Rojaiju", "Making The Groove (EP)", "Anvii", 20, "House")
-const track10 = new Tracks ("Check This Out", "Making The Groove (EP)", "Anvii", 20, "House")
+// const track6 = new Tracks (nombre: "White Lights", "White Lights (EP)", "Fenoma", 20, "House")
+// const track7 = new Tracks (nombre: "Feel It", "White Lights (EP)", "Fenoma", 20, "House")
+// const track8 = new Tracks (nombre: "Making The Groove", "Making The Groove (EP)", "Anvii", 20, "House")
+// const track9 = new Tracks (nombre: "Rojaiju", "Making The Groove (EP)", "Anvii", 20, "House")
+// const track10 = new Tracks (nombre: "Check This Out", "Making The Groove (EP)", "Anvii", 20, "House")
 
-const allTacks = [track1, track2,track3,track4,track5,track6,track7,track8,track9,track10];
-const minimal = [track1, track2, track3, track4, track5];
-const house = [track6, track7, track8, track9, track10];
-const carrito = []
 
-let musica = allTacks
-console.log (musica)
+
+
+
 // let filtro = prompt ("Ingresa: \n 1) Para Minimal \n 2) Para house")
 
 
@@ -79,6 +76,42 @@ console.log (musica)
 //     }
 // }
 // buy ()
+
+
+
+const tracks =[{nombre: 'Al Final Del Tunel', artista:'Kold',genero: 'Minimal'},{nombre: 'Dark Sequence', artista:'Kold',genero: 'Minimal'},{nombre: 'All Night Long', artista:'Jokr',genero: 'Minimal'},{nombre: 'Head Hunter', artista:'Jokr',genero: 'Minimal'},{nombre: 'Ninja', artista:'Jokr',genero: 'Minimal'},{nombre: 'White Lights', artista:'Fenoma',genero: 'House'},{nombre: 'Feel It', artista:'Fenoma',genero: 'House'},{nombre: 'Making The Groove', artista:'Anvii',genero: 'House'},{nombre: 'Rojaiju', artista:'Anvii',genero: 'House'},{nombre: 'Check This out', artista:'Anvii',genero: 'House'}];
+
+
+
+
+const tracksDeMinimal = tracks.filter ((track) => track.genero == 'Minimal'); 
+// console.log (tracksDeMinimal);
+
+const tracksDeHouse = tracks.filter ((track) => track.genero == 'House');
+// console.log (tracksDeHouse);
+
+
+
+let filtro = prompt ('Ingresa: \n 1) Para Minimal \n 2) Para house  \n O pulsa ENTER para ver todos los tracks disponibles')
+
+function saludo () {
+    if (filtro == '1', 'minimal'){
+        console.log (tracksDeMinimal)
+    }
+    if (filtro == '2', 'house'){
+        console.log (tracksDeHouse)
+    }
+    else{
+        console.log (tracks)
+    }
+}
+
+saludo ()
+ 
+
+
+
+
 
 
 
