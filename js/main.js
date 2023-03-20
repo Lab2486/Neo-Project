@@ -79,8 +79,7 @@
 
 
 
-const tracks =[{nombre: 'Al Final Del Tunel', artista:'Kold',genero: 'Minimal'},{nombre: 'Dark Sequence', artista:'Kold',genero: 'Minimal'},{nombre: 'All Night Long', artista:'Jokr',genero: 'Minimal'},{nombre: 'Head Hunter', artista:'Jokr',genero: 'Minimal'},{nombre: 'Ninja', artista:'Jokr',genero: 'Minimal'},{nombre: 'White Lights', artista:'Fenoma',genero: 'House'},{nombre: 'Feel It', artista:'Fenoma',genero: 'House'},{nombre: 'Making The Groove', artista:'Anvii',genero: 'House'},{nombre: 'Rojaiju', artista:'Anvii',genero: 'House'},{nombre: 'Check This out', artista:'Anvii',genero: 'House'}];
-
+const tracks =[{nombre: 'Al Final Del Tunel', artista:'Kold',genero: 'Minimal', codigo: "m01"},{nombre: 'Dark Sequence', artista:'Kold',genero: 'Minimal', codigo: "m02"},{nombre: 'All Night Long', artista:'Jokr',genero: 'Minimal', codigo: "m03"},{nombre: 'Head Hunter', artista:'Jokr',genero: 'Minimal', codigo: "m04"},{nombre: 'Ninja', artista:'Jokr',genero: 'Minimal', codigo: "m05"},{nombre: 'White Lights', artista:'Fenoma',genero: 'House', codigo: "h01"},{nombre: 'Feel It', artista:'Fenoma',genero: 'House', codigo: "h02"},{nombre: 'Making The Groove', artista:'Anvii',genero: 'House', codigo: "h03"},{nombre: 'Rojaiju', artista:'Anvii',genero: 'House', codigo: "h04"},{nombre: 'Check This out', artista:'Anvii',genero: 'House', codigo: "h05"}];
 
 
 
@@ -92,21 +91,32 @@ const tracksDeHouse = tracks.filter ((track) => track.genero == 'House');
 
 
 
-let filtro = prompt ('Ingresa: \n 1) Para Minimal \n 2) Para house  \n O pulsa ENTER para ver todos los tracks disponibles')
+let filtro = prompt ('Ingresa: \n 1) Para Minimal \n 2) Para house  \n 3) Para ver todos los tracks disponibles')
 
 function saludo () {
-    if (filtro == '1', 'minimal'){
-        console.log (tracksDeMinimal)
+    if (filtro == "1"){
+            for (const track of tracksDeMinimal) {
+                console.log(`${track.nombre} / ${track.artista} / ${track.genero} / Codigo: ${track.codigo}`)
+            }
     }
-    if (filtro == '2', 'house'){
-        console.log (tracksDeHouse)
+
+    if (filtro == "2"){
+            for (const track of tracksDeHouse) {
+                console.log(`${track.nombre} / ${track.artista} / ${track.genero} / Codigo: ${track.codigo}`)
+                }
     }
-    else{
-        console.log (tracks)
-    }
+
+    if (filtro == "3"){
+        for (const track of tracks) {
+            console.log(`${track.nombre} / ${track.artista} / ${track.genero} / Codigo: ${track.codigo}`)
+            }
+}
+
 }
 
 saludo ()
+
+let compra = prompt ('ingresa el codigo del track que deseas comprar')
  
 
 
