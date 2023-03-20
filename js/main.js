@@ -79,7 +79,7 @@
 
 
 
-const tracks =[{nombre: 'Al Final Del Tunel', artista:'Kold',genero: 'Minimal', codigo: "m01"},{nombre: 'Dark Sequence', artista:'Kold',genero: 'Minimal', codigo: "m02"},{nombre: 'All Night Long', artista:'Jokr',genero: 'Minimal', codigo: "m03"},{nombre: 'Head Hunter', artista:'Jokr',genero: 'Minimal', codigo: "m04"},{nombre: 'Ninja', artista:'Jokr',genero: 'Minimal', codigo: "m05"},{nombre: 'White Lights', artista:'Fenoma',genero: 'House', codigo: "h01"},{nombre: 'Feel It', artista:'Fenoma',genero: 'House', codigo: "h02"},{nombre: 'Making The Groove', artista:'Anvii',genero: 'House', codigo: "h03"},{nombre: 'Rojaiju', artista:'Anvii',genero: 'House', codigo: "h04"},{nombre: 'Check This out', artista:'Anvii',genero: 'House', codigo: "h05"}];
+const tracks = [{nombre: 'Al Final Del Tunel', artista:'Kold',genero: 'Minimal', codigo: "m01"},{nombre: 'Dark Sequence', artista:'Kold',genero: 'Minimal', codigo: "m02"},{nombre: 'All Night Long', artista:'Jokr',genero: 'Minimal', codigo: "m03"},{nombre: 'Head Hunter', artista:'Jokr',genero: 'Minimal', codigo: "m04"},{nombre: 'Ninja', artista:'Jokr',genero: 'Minimal', codigo: "m05"},{nombre: 'White Lights', artista:'Fenoma',genero: 'House', codigo: "h01"},{nombre: 'Feel It', artista:'Fenoma',genero: 'House', codigo: "h02"},{nombre: 'Making The Groove', artista:'Anvii',genero: 'House', codigo: "h03"},{nombre: 'Rojaiju', artista:'Anvii',genero: 'House', codigo: "h04"},{nombre: 'Check This out', artista:'Anvii',genero: 'House', codigo: "h05"}];
 
 
 
@@ -115,6 +115,8 @@ function saludo () {
 }
 
 saludo ()
+
+const carrito = []
 
 let compra = prompt ('ingresa el codigo del track que deseas comprar')
  
