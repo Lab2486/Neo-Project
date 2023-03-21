@@ -116,18 +116,6 @@ function saludo () {
 
 saludo ()
 
-// let carrito = [];
-
-
-
-// function comprar () {
-//     let buy = prompt ('Ingresa el codigo del track que deseas comprar')
-//     console.log (tracks.find((track) =>  buy == track.codigo))
-//     carrito.push (buy);
-//     console.log (carrito)   
-// }
-
-// comprar ()
 
 let carrito = [];
 
