@@ -116,9 +116,58 @@ function saludo () {
 
 saludo ()
 
-const carrito = []
+// let carrito = [];
 
-let compra = prompt ('ingresa el codigo del track que deseas comprar')
+
+
+// function comprar () {
+//     let buy = prompt ('Ingresa el codigo del track que deseas comprar')
+//     console.log (tracks.find((track) =>  buy == track.codigo))
+//     carrito.push (buy);
+//     console.log (carrito)   
+// }
+
+// comprar ()
+
+let carrito = [];
+
+
+function comprar () {
+        let buy = prompt ('Ingresa el codigo del track que deseas comprar')
+        console.log (tracks.find((track) =>  buy == track.codigo))
+        carrito.push (buy);
+        console.log (carrito)   
+    };
+
+comprar ()
+
+
+
+function comprarMas () {
+    let continuarCompra = prompt ('Deseas comprar otro track? \n 1) SI \n 2) NO')
+    if (continuarCompra == "1"){
+        let buy = prompt ('Ingresa el codigo del track que deseas comprar')
+        console.log (tracks.find((track) =>  buy == track.codigo))
+        carrito.push (buy);
+        console.log (carrito) 
+    }
+    if (continuarCompra == "2"){
+        alert ('Gracias por su compra')
+    }
+}
+
+comprarMas ()
+
+
+
+
+
+
+
+
+
+
+
  
 
 
