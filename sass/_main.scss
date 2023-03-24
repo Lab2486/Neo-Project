@@ -83,5 +83,10 @@ main{
         width:120px;
         @include subtitulo
     }
+
+    .item-active{
+        background: rgb(85, 85, 85);
+        color: white;
+    }
 }
 

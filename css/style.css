@@ -133,3 +133,8 @@ main .ep .boton {
   font-family: 'Space Grotesk', sans-serif;
   text-align: center;
 }
+
+.category__list .item-active {
+  background: #555555;
+  color: white;
+}
