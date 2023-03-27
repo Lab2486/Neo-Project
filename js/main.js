@@ -64,19 +64,15 @@ function comprarMas () {
 
 // comprarMas ()
 
+const btnAll = document.getElementById ("btnAll"),
+btnHouse = document.getElementById ("btnHouse"),
+btnMinimal = document.getElementById ("btnMinimal"),
+btnPsytrance = document.getElementById ("btnPsytrance"),
+muestra = document.getElementById ("product-list")
 
-let btnAll = document.getElementById ("btnAll");
-let btnHouse = document.getElementById ("btnHouse");
-let btnMinimal = document.getElementById ("btnMinimal");
-let btnPsytrance = document.getElementById ("btnPsytrance");
-
-
-
-
-
-
-
-
+btnHouse.onclick = ()=>{
+    
+}
 
 
 
