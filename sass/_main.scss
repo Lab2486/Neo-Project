@@ -1,92 +1,79 @@
-.main__contenedor{
-    display: flex;
-    justify-content: center;
+.main__contenedor {
+  display: flex;
+  justify-content: center;
 }
 
+main {
+  width: 80%;
+  background-color: pink;
 
-main{
+  .ep {
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
 
-    width: 80%;
-   
-    .ep{
-        text-align: center;
-        padding-left: 40px;
-        padding-right: 40px;
-
-        &__title{
-            color:rgb(204, 204, 204);
-            font-family: 'IBM Plex Mono', monospace;
-            padding-top: 5px;
-        }
-        
-        &__subtitle{
-            font-family: 'IBM Plex Mono', monospace;
-            color: white;
-            
-        }
-
-        &__img{
-            width: 250px;
-            border-radius: 29px;
-        }
-
-        &__artist{
-            color: rgb(255, 255, 255);
-            font-family: 'Syncopate', sans-serif;
-            padding-top: 5px;
-            margin: 0;
-        }
-
-        &__columna{
-            background-color: #646464;
-            border-radius: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0px 0px 15px black;
-            border: 1px solid black;
-        }
-
-        &__audio{
-            width: 90%;
-            border-radius: 10px;
-        }
-
-
-        .boton{
-            margin-top: 10px;
-        }
-
-
-
-
-
+    &__title {
+      color: rgb(204, 204, 204);
+      font-family: "IBM Plex Mono", monospace;
+      padding-top: 5px;
     }
 
-  
+    &__subtitle {
+      font-family: "IBM Plex Mono", monospace;
+      color: white;
+    }
+
+    &__img {
+      width: 250px;
+      border-radius: 29px;
+    }
+
+    &__artist {
+      color: rgb(142, 40, 40);
+      font-family: "Syncopate", sans-serif;
+      padding-top: 5px;
+      margin: 0;
+    }
+
+    &__columna {
+      background-color: #646464;
+      border-radius: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0px 0px 15px black;
+      border: 1px solid black;
+    }
+
+    &__audio {
+      width: 90%;
+      border-radius: 10px;
+    }
+
+    .boton {
+      margin-top: 10px;
+    }
+  }
 }
 
-.category__list{
-    display: flex;
-    background-color: #414141;
-    justify-content: space-evenly;
+.category__list {
+  display: flex;
+  background-color: #414141;
+  justify-content: space-evenly;
 
+  .category__item {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+    width: 120px;
+    @include subtitulo;
+  }
 
-
-    .category__item{
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        padding: 10px 10px;
-        background-color: white;
-        text-decoration: none;
-        color: black;
-        border-radius: 5px;
-        width:120px;
-        @include subtitulo
-    }
-
-    .item-active{
-        background: rgb(85, 85, 85);
-        color: white;
-    }
+  .item-active {
+    background: rgb(85, 85, 85);
+    color: white;
+  }
 }
-
