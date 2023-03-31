@@ -1,32 +1,30 @@
-.header{
-    background-color: black;
+.header {
+  background-color: black;
 
-    &__nav{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+  &__nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
-
-        .logo{
-            &__img{
-                width: 70px;
-                border: 2px solid darkgray;
-                border-radius: 50%;
-            }
-        }
-    }
-
-    .carrito{
+    .logo {
+      &__img {
         width: 70px;
-        list-style: none;
+        border: 2px solid darkgray;
+        border-radius: 50%;
+      }
     }
+  }
 
-    &__titulo{
-        @include titulo
-    }
+  .carrito {
+    width: 70px;
+    list-style: none;
+  }
 
-    ul{
-        margin: 0;
-    }
-   
+  &__titulo {
+    @include titulo;
+  }
+
+  ul {
+    margin: 0;
+  }
 }
