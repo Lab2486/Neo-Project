@@ -4,69 +4,84 @@
   justify-content: center;
 }
 
-main {
-  background-color: rgb(18, 18, 18);
+.ep {
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 
-  .ep {
-    text-align: center;
-    padding-left: 40px;
-    padding-right: 40px;
+  &__title {
+    color: rgb(0, 0, 0);
+    font-family: "IBM Plex Mono", monospace;
+    padding-top: 5px;
+    font-size: 1.5rem;
+  }
+
+  &__subtitle {
+    font-family: "IBM Plex Mono", monospace;
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 29px;
+  }
+
+  &__artist {
+    color: rgb(0, 0, 0);
+    font-family: "IBM Plex Mono", monospace;
+    padding-top: 5px;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  &__columna {
+    background-color: #b8b8b8;
+    border-radius: 20px;
+    width: 20%;
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
+    margin: 20px 10px;
     justify-content: center;
+    padding-top: 20px;
+    align-items: center;
+  }
 
-    &__title {
-      color: rgb(204, 204, 204);
-      font-family: "IBM Plex Mono", monospace;
-      padding-top: 5px;
-    }
+  &__audio {
+    width: 90%;
+    border-radius: 10px;
+    margin: 10px 0;
+  }
 
-    &__subtitle {
-      font-family: "IBM Plex Mono", monospace;
+  .boton {
+    margin-top: 10px;
+
+    &:hover {
+      background-color: rgb(126, 126, 76);
       color: white;
-    }
-
-    &__img {
-      width: 100%;
-      border-radius: 29px;
-    }
-
-    &__artist {
-      color: rgb(126, 126, 76);
-      font-family: "Syncopate", sans-serif;
-      padding-top: 5px;
-      margin: 0;
-    }
-
-    &__columna {
-      background-color: #37362b;
-      border-radius: 30px;
-      width: 25%;
-      display: flex;
-      flex-direction: column;
-      padding-bottom: 20px;
-      margin: 10px 20px;
-      justify-content: center;
-      padding-top: 20px;
-    }
-
-    &__audio {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    .boton {
-      margin-top: 10px;
-
-      &:hover {
-        background-color: rgb(126, 126, 76);
-        color: white;
-        transition: ease 0.5s;
-      }
+      transition: ease 0.5s;
     }
   }
 }
 
+.comprar {
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+
+  &:hover {
+    background-color: #4f4e44;
+    color: white;
+    transition: 0.5s;
+  }
+}
 .category__list {
   display: flex;
   background-color: #37362b;
@@ -82,7 +97,8 @@ main {
     color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 120px;
-    @include subtitulo;
+
+    border: none;
   }
 
   .item-active {
@@ -91,61 +107,111 @@ main {
   }
 }
 
-.modal-contenedor {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #4f4e44;
+.modal__container {
+  width: 80%;
+  margin: 0 10%;
+  max-height: 88vh;
+  color: white;
+  background-color: #37362b;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  transition: all 0.5s;
-  opacity: 0;
-  visibility: hidden;
-}
+  position: fixed;
+  overflow: auto;
+  z-index: 9;
+  top: 12vh;
+  scrollbar-color: none;
 
-.modal-active {
-  opacity: 1;
-  visibility: visible;
-}
+  .modal__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 10px;
 
-.modal-carrito {
-  position: relative;
-  background-color: wheat;
-  min-width: 500px;
-  padding: 20px;
-  margin-top: -100px;
-  transition: all 0.5s;
+    &__artist {
+      width: 15%;
+      text-align: start;
+      font-family: "IBM Plex Mono", monospace;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+    }
 
-  .modal-active .modal-carrito {
-    margin-top: 0;
+    &__track {
+      width: 30%;
+      text-align: start;
+      font-family: "IBM Plex Mono", monospace;
+      color: rgb(255, 255, 255);
+      font-size: 1.5rem;
+    }
+
+    &__genero {
+      width: 10%;
+      text-align: start;
+      font-family: "IBM Plex Mono", monospace;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+    }
+
+    &__audio {
+      width: 30%;
+      text-align: start;
+      font-family: "IBM Plex Mono", monospace;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+    }
+
+    &__precio {
+      width: 5%;
+      text-align: start;
+      font-family: "IBM Plex Mono", monospace;
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+    }
   }
 
-  .modal-carrito h3 {
-    color: red;
-    padding-top: 5px;
-  }
-
-  .modal-carrito #modalCerrar {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 20px;
-    color: aqua;
+  .delete__product {
+    width: 5%;
+    border-radius: 10px;
     border: none;
-    background-color: yellowgreen;
-
     &:hover {
-      cursor: pointer;
+      background-color: transparent;
+      transform: rotateX(360deg);
+      transition: 1s;
+      color: red;
+      cursor: not-allowed;
     }
+  }
+}
 
-    &:focus {
-      outline: none;
-    }
+.modal__container::-webkit-scrollbar {
+  display: none;
+}
 
-    .precioProducto {
-      padding-top: 10px;
-    }
+.modal__header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #000000;
+  color: rgb(185, 185, 137);
+  width: 100%;
+  align-items: center;
+}
+
+.modal__header__title {
+  justify-self: start;
+}
+
+.modal__header__button {
+  width: 2%;
+  height: 2%;
+  border: none;
+  border-radius: 50%;
+
+  &:hover {
+    transform: scale(1.2);
+    background-color: black;
+    transition: 5s;
+    color: red;
   }
 }

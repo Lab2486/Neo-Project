@@ -1,191 +1,134 @@
-const catalogoDeTracks = [
-  {
-    nombre: "Al Final Del Tunel",
-    artista: "Kold",
-    genero: "Minimal",
-    id: "m01",
-    imagen: "./media/al-final-del-tunel-kold.jpg",
-    sound: "./media/KOLD - Al Final Del Túnel (Original Mix).mp3",
-    precio: 200,
-  },
-  {
-    nombre: "Dark Sequence",
-    artista: "Kold",
-    genero: "Minimal",
-    id: "m02",
-    imagen: "./media/al-final-del-tunel-kold.jpg",
-    sound: "./media/KOLD - Dark Sequence (Original Mix).mp3",
-    precio: 200,
-  },
-  {
-    nombre: "Ninja",
-    artista: "JØKR",
-    genero: "Minimal",
-    id: "m03",
-    imagen: "./media/jokr-head-hunter-EP.jpg",
-    sound: "./media/JØKR - Ninja (Original Mix) Bandcamp Exclusive.mp3",
-    precio: 200,
-  },
-  {
-    nombre: "All Night Long",
-    artista: "JØKR",
-    genero: "Minimal",
-    id: "m04",
-    imagen: "./media/jokr-head-hunter-EP.jpg",
-    sound: "./media/JØKR - Ninja (Original Mix) Bandcamp Exclusive.mp3",
-    precio: 200,
-  },
-  {
-    nombre: "Head Hunter",
-    artista: "JØKR",
-    genero: "Minimal",
-    id: "m05",
-    imagen: "./media/jokr-head-hunter-EP.jpg",
-    sound: "./media/JØKR - Ninja (Original Mix) Bandcamp Exclusive.mp3",
-    precio: 200,
-  },
-  {
-    nombre: "Making The Goove",
-    artista: "Anvii",
-    genero: "Minimal",
-    id: "h01",
-    imagen: "./media//Anvii-Making-the-groove-EP.jpg",
-    sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
-    precio: 200,
-  },
-  {
-    nombre: "Rojaiju",
-    artista: "Anvii",
-    genero: "Minimal",
-    id: "h02",
-    imagen: "./media//Anvii-Making-the-groove-EP.jpg",
-    sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
-    precio: 200,
-  },
-  {
-    nombre: "Check This Out",
-    artista: "Anvii",
-    genero: "Minimal",
-    id: "h03",
-    imagen: "./media//Anvii-Making-the-groove-EP.jpg",
-    sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
-    precio: 200,
-  },
-  {
-    nombre: "White Lights",
-    artista: "Fenoma",
-    genero: "Minimal",
-    id: "h04",
-    imagen: "./media/Fenoma-White-Lights-EP.jpg",
-    sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
-    precio: 200,
-  },
-  {
-    nombre: "Feel It",
-    artista: "Fenoma",
-    genero: "Minimal",
-    id: "h05",
-    imagen: "./media/Fenoma-White-Lights-EP.jpg",
-    sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
-    precio: 200,
-  },
-];
-
-let carrito = [];
-
-const productosContenedor = document.getElementById("productsContainer");
-const verCarrito = document.getElementById("verCarrito");
+const contenedorProductos = document.getElementById("contenedorProductos");
+const verCarrito = document.getElementById("botonCarrito");
 const modalContainer = document.getElementById("modalContainer");
-const btnAll = document.getElementById("btnAll");
-const btnHouse = document.getElementById("btnHouse");
-const btnMinimal = document.getElementById("btnMinimal");
-const btnRandom = document.getElementById("btnRandom");
-const btnEliminar = document.getElementById("btnEliminar");
+const cantidadCarrito = document.getElementById("cantidadCarrito");
+const botonesCategoria = document.querySelectorAll(".category__item");
 
-catalogoDeTracks.forEach((track) => {
-  let content = document.createElement("div");
-  content.className = "product-card";
-  content.innerHTML = `
-  <img class="track-img" src="${track.imagen}" >
-  <h3 class="track-name">${track.nombre}</h3>
-  <p class="track-artist">${track.artista}</p>
-  <audio clas="track-audio" src="${track.sound}" controls></audio>
-  <p class="track-price">$${track.precio}</p>
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  `;
-  productosContenedor.append(content);
+function cargarProductos(productosElegidos) {
+  contenedorProductos.innerHTML = "";
+  productos.forEach((product) => {
+    let content = document.createElement("div");
+    content.className = "ep__columna";
+    content.innerHTML = `
+      <img class="ep__img" src="${product.imagen}">
+      <h3 class="ep__artist">${product.artista}</h3>
+      <h2 class="ep__title">${product.nombre}</h2>
+      <h3 class="ep__subtitle">${product.genero}</h3>
+      <audio class="ep__audio" src="${product.sound}" controls></audio>
+      <p class="ep__precio>$${product.precio}</p>
+    `;
+    contenedorProductos.append(content);
 
-  let comprar = document.createElement("button");
-  comprar.innerText = "Buy";
-  comprar.className = "btn-comprar";
+    let comprar = document.createElement("button");
+    comprar.className = "comprar";
+    comprar.innerText = "Add to Card";
 
-  content.append(comprar);
+    content.append(comprar);
 
-  comprar.addEventListener("click", () => {
-    carrito.push({
-      imagen: track.imagen,
-      nombre: track.nombre,
-      artista: track.artista,
-      genero: track.genero,
-      precio: track.precio,
-      sound: track.sound,
-      id: track.id,
+    comprar.addEventListener("click", () => {
+      carrito.push({
+        id: product.id,
+        img: product.imagen,
+        nombre: product.nombre,
+        artista: product.artista,
+        genero: product.genero,
+        sound: product.sound,
+        precio: product.precio,
+      });
+      console.log(carrito);
+      carritoCounter();
+      saveLocal();
     });
   });
-});
+}
+cargarProductos(productos);
 
-//--------------------Carrito--------------------------
-const printCarrito = () => {
-  verCarrito.addEventListener("click", () => {
-    modalContainer.innerHTML = "";
-    modalContainer.style.display = "flex";
-    const modalHeader = document.createElement("div");
-    modalHeader.className = "modal-header";
-    modalHeader.innerHTML = `
-    <h2 class="modal-header-titulo">Carrito</h2>
-    `;
-    modalContainer.append(modalHeader);
+const pintarCarrito = () => {
+  modalContainer.innerHTML = "";
+  modalContainer.style.display = "flex";
+  const modalHeader = document.createElement("div");
+  modalHeader.className = "modal__header";
+  modalHeader.innerHTML = `
+      <h1 class="modal__header__title">Carrito</h1>
+      `;
+  modalContainer.append(modalHeader);
 
-    const modalButton = document.createElement("h3");
-    modalButton.innerText = "X";
-    modalButton.className = "modal-header-btn";
+  const modalButton = document.createElement("button");
+  modalButton.innerText = "X";
+  modalButton.className = "modal__header__button";
 
-    modalButton.addEventListener("click", () => {
-      modalContainer.style.display = "none";
-    });
-
-    modalHeader.append(modalButton);
-
-    carrito.forEach((track) => {
-      let carritoContent = document.createElement("div");
-      carritoContent.className = "carrito-item";
-      carritoContent.innerHTML = `
-        <img class="track-img-cart" src="${track.imagen}" >
-        <h3 class="track-name-cart">${track.nombre}</h3>
-        <p class="track-artist">${track.artista}</p>
-        <p class="track-id">${track.id}</p>
-        <audio clas="track-audio" src="${track.sound}" controls></audio>
-        <p class="track-price">$${track.precio}</p>
-        <button class="btn-eliminar"id="btnEliminar"><i class="bi bi-trash3"></i></button>
-    `;
-      modalContainer.append(carritoContent);
-    });
-
-    const total = carrito.reduce((acc, el) => acc + el.precio, 0);
-
-    const totalCompra = document.createElement("div");
-    totalCompra.className = "total-content";
-    totalCompra.innerHTML = `total a pagar: $${total}`;
-    modalContainer.append(totalCompra);
+  modalButton.addEventListener("click", () => {
+    modalContainer.style.display = "none";
   });
-  const eliminar = (prodId) => {
-    const item = carrito.find((prod) => prod.id === prodId);
-    const indice = carrito.indexOf(item);
-    carrito.splice(indice, 1);
 
-    btnEliminar.addEventListener(eliminar);
-    modalContainer.innerHTML = "";
-  };
+  modalHeader.append(modalButton);
+
+  carrito.forEach((product) => {
+    let carritoContent = document.createElement("div");
+    carritoContent.className = "modal__content";
+    carritoContent.innerHTML = `
+        <h3 class="modal__content__artist">${product.artista}</h3>
+        <h2 class="modal__content__track">${product.nombre}</h2>
+        <h3 class="modal__content__genero">${product.genero}</h3>
+        <audio class="modal__content__audio" src="${product.sound}" controls></audio>
+        <p class="modal__content__precio">$${product.precio}</p>
+          `;
+    modalContainer.append(carritoContent);
+
+    let eliminar = document.createElement("button");
+
+    eliminar.innerText = "Quitar";
+    eliminar.className = "delete__product";
+    carritoContent.append(eliminar);
+    eliminar.addEventListener("click", eliminarProducto);
+  });
+
+  const total = carrito.reduce((acc, el) => acc + el.precio, 0);
+
+  const totalBuying = document.createElement("div");
+  totalBuying.className = "total_content";
+  totalBuying.innerHTML = `Total a pagar: $${total}`;
+  modalContainer.append(totalBuying);
 };
 
-verCarrito.addEventListener("click", printCarrito);
+verCarrito.addEventListener("click", pintarCarrito);
+
+const eliminarProducto = () => {
+  const foundID = carrito.find((element) => element.id);
+  carrito = carrito.filter((carritoId) => {
+    return carritoId !== foundID;
+  });
+  carritoCounter();
+  saveLocal();
+  pintarCarrito();
+};
+
+const carritoCounter = () => {
+  cantidadCarrito.style.display = "block";
+
+  const carritoLength = carrito.length;
+  localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+  cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
+};
+
+const saveLocal = () => {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+
+JSON.parse(localStorage.getItem("carrito"));
+
+carritoCounter();
+
+botonesCategoria.forEach((boton) => {
+  boton.addEventListener("click", (e) => {
+    botonesCategoria.forEach((boton) => boton.classList.remove("item-active"));
+    e.currentTarget.classList.add("item-active");
+
+    const productosBoton = productos.filter(
+      (producto) => producto.genero === e.currentTarget.id
+    );
+    cargarProductos(productosBoton);
+  });
+});

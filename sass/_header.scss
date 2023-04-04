@@ -16,8 +16,15 @@
   }
 
   .carrito {
-    width: 70px;
     list-style: none;
+    font-size: 40px;
+    background: none;
+    color: white;
+    border: none;
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+    align-items: baseline;
   }
 
   &__titulo {
