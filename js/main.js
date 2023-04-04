@@ -1,6 +1,3 @@
-const contenedorProductos = document.getElementById("contenedorProductos");
-const contenedorCarrito = document.getElementById("carritoContenedor");
-const btnVaciar = document.getElementById("vaciarCarrito");
 const catalogoDeTracks = [
   {
     nombre: "Al Final Del Tunel",
@@ -88,7 +85,7 @@ const catalogoDeTracks = [
     artista: "Fenoma",
     genero: "Minimal",
     id: "h05",
-    imagen: "../media/Fenoma-White-Lights-EP.jpg",
+    imagen: "./media/Fenoma-White-Lights-EP.jpg",
     sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
     precio: 200,
   },
@@ -96,55 +93,99 @@ const catalogoDeTracks = [
 
 let carrito = [];
 
-btnVaciar.addEventListener("click", () => {
-  carrito.length = 0;
-  actualizarCarrito();
-});
+const productosContenedor = document.getElementById("productsContainer");
+const verCarrito = document.getElementById("verCarrito");
+const modalContainer = document.getElementById("modalContainer");
+const btnAll = document.getElementById("btnAll");
+const btnHouse = document.getElementById("btnHouse");
+const btnMinimal = document.getElementById("btnMinimal");
+const btnRandom = document.getElementById("btnRandom");
+const btnEliminar = document.getElementById("btnEliminar");
 
-catalogoDeTracks.forEach((product) => {
+catalogoDeTracks.forEach((track) => {
   let content = document.createElement("div");
-  content.className = "ep ep__columna ";
+  content.className = "product-card";
   content.innerHTML = `
-    <img class="ep__img" src="${product.imagen}" alt="${product.nombre}">
-    <h3 class="ep__title fs-4">${product.nombre}</h3>
-    <p class="ep__artist fs-3">${product.artista}</p>
-    <audio class="ep__audio" src="${product.sound}" controls></audio>
-    <button id="agregar${product.id}" class="btn btn-outline-light boton boton__agregar">BUY</button>
-    `;
+  <img class="track-img" src="${track.imagen}" >
+  <h3 class="track-name">${track.nombre}</h3>
+  <p class="track-artist">${track.artista}</p>
+  <audio clas="track-audio" src="${track.sound}" controls></audio>
+  <p class="track-price">$${track.precio}</p>
 
-  contenedorProductos.append(content);
+  `;
+  productosContenedor.append(content);
 
-  const boton = document.getElementById(`agregar${product.id}`);
-  boton.addEventListener("click", () => {
-    addToCart(product.id);
+  let comprar = document.createElement("button");
+  comprar.innerText = "Buy";
+  comprar.className = "btn-comprar";
+
+  content.append(comprar);
+
+  comprar.addEventListener("click", () => {
+    carrito.push({
+      imagen: track.imagen,
+      nombre: track.nombre,
+      artista: track.artista,
+      genero: track.genero,
+      precio: track.precio,
+      sound: track.sound,
+      id: track.id,
+    });
   });
 });
 
-const addToCart = (prodId) => {
-  const item = catalogoDeTracks.find((prod) => prod.id === prodId);
-  carrito.push(item);
-  actualizarCarrito();
-  console.log(carrito);
-};
-
-const eliminarDelCarrito = (prodId) => {
-  const item = carrito.find((prod) => prod.id === prodId);
-  const indice = carrito.indexOf(item);
-  carrito.splice(indice, 1);
-  actualizarCarrito();
-};
-
-const actualizarCarrito = () => {
-  contenedorCarrito.innerHTML = "";
-  carrito.forEach((product) => {
-    const div = document.createElement(`div`);
-    div.className = "producto__en__carrito";
-    div.innerHTML = `
-    <p>${product.nombre}</p>
-    <p>Precio:${product.precio}</p>
-    <button onClick = "eliminarDelCarrito('${product.id}')" class="btn__eliminar"> <i class="bi bi-trash3-fill"></i></button>
+//--------------------Carrito--------------------------
+const printCarrito = () => {
+  verCarrito.addEventListener("click", () => {
+    modalContainer.innerHTML = "";
+    modalContainer.style.display = "flex";
+    const modalHeader = document.createElement("div");
+    modalHeader.className = "modal-header";
+    modalHeader.innerHTML = `
+    <h2 class="modal-header-titulo">Carrito</h2>
     `;
-    contenedorCarrito.appendChild(div);
+    modalContainer.append(modalHeader);
+
+    const modalButton = document.createElement("h3");
+    modalButton.innerText = "X";
+    modalButton.className = "modal-header-btn";
+
+    modalButton.addEventListener("click", () => {
+      modalContainer.style.display = "none";
+    });
+
+    modalHeader.append(modalButton);
+
+    carrito.forEach((track) => {
+      let carritoContent = document.createElement("div");
+      carritoContent.className = "carrito-item";
+      carritoContent.innerHTML = `
+        <img class="track-img-cart" src="${track.imagen}" >
+        <h3 class="track-name-cart">${track.nombre}</h3>
+        <p class="track-artist">${track.artista}</p>
+        <p class="track-id">${track.id}</p>
+        <audio clas="track-audio" src="${track.sound}" controls></audio>
+        <p class="track-price">$${track.precio}</p>
+        <button class="btn-eliminar"id="btnEliminar"><i class="bi bi-trash3"></i></button>
+    `;
+      modalContainer.append(carritoContent);
+    });
+
+    const total = carrito.reduce((acc, el) => acc + el.precio, 0);
+
+    const totalCompra = document.createElement("div");
+    totalCompra.className = "total-content";
+    totalCompra.innerHTML = `total a pagar: $${total}`;
+    modalContainer.append(totalCompra);
   });
-  contadorCarrito.innerText = carrito.length;
+  const eliminar = (prodId) => {
+    const item = carrito.find((prod) => prod.id === prodId);
+    const indice = carrito.indexOf(item);
+    carrito.splice(indice, 1);
+
+    btnEliminar.addEventListener(eliminar);
+    modalContainer.innerHTML = "";
+  };
 };
+
+verCarrito.addEventListener("click", printCarrito);
