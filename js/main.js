@@ -121,6 +121,7 @@ JSON.parse(localStorage.getItem("carrito"));
 
 carritoCounter();
 
+//  intentando hacer el fultro de los tracks-----------------------------------------------------------------
 botonesCategoria.forEach((boton) => {
   boton.addEventListener("click", (e) => {
     botonesCategoria.forEach((boton) => boton.classList.remove("item-active"));
