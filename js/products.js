@@ -7,6 +7,10 @@ const productos = [
     imagen: "./media/al-final-del-tunel-kold.jpg",
     sound: "./media/KOLD - Al Final Del Túnel (Original Mix).mp3",
     precio: 200,
+    categoria: {
+      nombre: "minimal",
+      id: "minimal",
+    },
   },
   {
     nombre: "Dark Sequence",
@@ -16,6 +20,10 @@ const productos = [
     imagen: "./media/al-final-del-tunel-kold.jpg",
     sound: "./media/KOLD - Dark Sequence (Original Mix).mp3",
     precio: 200,
+    categoria: {
+      nombre: "minimal",
+      id: "minimal",
+    },
   },
   {
     nombre: "Ninja",
@@ -25,6 +33,10 @@ const productos = [
     imagen: "./media/jokr-head-hunter-EP.jpg",
     sound: "./media/JØKR - Ninja (Original Mix) Bandcamp Exclusive.mp3",
     precio: 200,
+    categoria: {
+      nombre: "minimal",
+      id: "minimal",
+    },
   },
   {
     nombre: "All Night Long",
@@ -35,6 +47,10 @@ const productos = [
     sound:
       "./media/JØKR - All Night Long (Original Mix) Bandcamp Exclusive.mp3",
     precio: 200,
+    categoria: {
+      nombre: "minimal",
+      id: "minimal",
+    },
   },
   {
     nombre: "Head Hunter",
@@ -44,6 +60,10 @@ const productos = [
     imagen: "./media/jokr-head-hunter-EP.jpg",
     sound: "./media/JØKR - Ninja (Original Mix) Bandcamp Exclusive.mp3",
     precio: 200,
+    categoria: {
+      nombre: "minimal",
+      id: "minimal",
+    },
   },
   {
     nombre: "Making The Goove",
@@ -53,6 +73,10 @@ const productos = [
     imagen: "./media//Anvii-Making-the-groove-EP.jpg",
     sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
     precio: 200,
+    categoria: {
+      nombre: "house",
+      id: "house",
+    },
   },
   {
     nombre: "Rojaiju",
@@ -62,6 +86,10 @@ const productos = [
     imagen: "./media//Anvii-Making-the-groove-EP.jpg",
     sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
     precio: 200,
+    categoria: {
+      nombre: "house",
+      id: "house",
+    },
   },
   {
     nombre: "Check This Out",
@@ -71,6 +99,10 @@ const productos = [
     imagen: "./media//Anvii-Making-the-groove-EP.jpg",
     sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
     precio: 200,
+    categoria: {
+      nombre: "house",
+      id: "house",
+    },
   },
   {
     nombre: "White Lights",
@@ -80,6 +112,10 @@ const productos = [
     imagen: "./media/Fenoma-White-Lights-EP.jpg",
     sound: "../media/Fenoma - White Lights (Original Mix).mp3",
     precio: 200,
+    categoria: {
+      nombre: "house",
+      id: "house",
+    },
   },
   {
     nombre: "Feel It",
@@ -89,5 +125,9 @@ const productos = [
     imagen: "./media/Fenoma-White-Lights-EP.jpg",
     sound: "./media/Anvii - Making The Groove (Original Mix).mp3",
     precio: 200,
+    categoria: {
+      nombre: "house",
+      id: "house",
+    },
   },
 ];
