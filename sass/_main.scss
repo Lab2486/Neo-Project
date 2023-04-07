@@ -97,8 +97,12 @@
     color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 120px;
-
     border: none;
+
+    &:hover {
+      background: rgb(206, 206, 123);
+      color: rgb(0, 0, 0);
+    }
   }
 
   .item-active {

@@ -15,6 +15,27 @@
     }
   }
 
+  &__login {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__btn {
+      cursor: pointer;
+      margin: 0;
+      &:hover {
+        color: rgb(134, 134, 255);
+      }
+    }
+  }
+  &__userimg {
+    width: 50px;
+    background: none;
+    border-radius: 50%;
+  }
+
   .carrito {
     list-style: none;
     font-size: 40px;
